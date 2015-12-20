@@ -1,0 +1,44 @@
+.hn-comments-sidebar * {
+  box-sizing: border-box;
+}
+
+.hn-comments-sidebar {
+  box-sizing: border-box;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-transition: width .3s, padding .3s, margin .3s;
+  transition: width .3s, padding .3s, margin .3s;
+  z-index: 99999999999;
+}
+
+.hn-comments-sidebar.sidebar-hidden {
+  width: 30px;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.hn-comments-sidebar.sidebar-hidden .hn-comments {
+  display: none;
+}
+
+.hn-comments-sidebar .hn-toggle {
+  right: 0;
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  float: left;
+  pointer-events: auto;
+}
+
+.hn-comments-sidebar .hn-comments {
+  width: calc(100% - 30px);
+  float: right;
+  padding: 15px;
+  background-color: white;
+}
