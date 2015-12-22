@@ -39,32 +39,28 @@ function initSidebar(data) {
 }
 
 function listChildren(children, depth) {
-  console.log(children);
   var comments = '';
 
-  $.each(children, function(index, val) {
-    if (val.points === null) {
-      val.points = '0';
-    }
+  if (children.length > 0 && Array.isArray(val.children)) {
+    $.each(children, function(index, val) {
+      if (val.points === null) {
+        val.points = '0';
+      }
 
-    comments += '<div class="hn-comment depth-' + depth + '">' +
-                  '<div class="user">' +
-                    val.author +
-                  '</div>' +
-                  '<div class="points">' +
-                    val.points +
-                  '</div>' +
-                  '<div class="text">' +
-                    val.text +
-                  '</div>' +
-                '</div>';
-
-    if (Array.isArray(val.children)) {
-      comments += listChildren(val.children, depth + 1);
-    }
-  });
-
-  console.log(comments);
+      comments += '<div class="hn-comment depth-' + depth + '">' +
+                    '<div class="user">' +
+                      val.author +
+                    '</div>' +
+                    '<div class="points">' +
+                      val.points +
+                    '</div>' +
+                    '<div class="text">' +
+                      val.text +
+                    '</div>' +
+                    listChildren(val.children, depth + 1) +
+                  '</div>';
+    });
+  }
 
   return comments;
 }
