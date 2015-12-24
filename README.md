@@ -10,6 +10,7 @@ When you click it you see the comments that are placed on HackerNews.
 To install this extension you need to take a few steps. These steps are:
 
  - Clone this project
+ - Rename the folder to something that ends with `.safariextension`
  - Open Safari
  - Go to preferences (CMD + ,)
  - Click on the tap advanced
