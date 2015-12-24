@@ -30,7 +30,6 @@ function getComments(objectID) {
   })
   .done(function(data) {
     // If there are any comments trigger the sidebar initializer
-    // console.log(data);
     data.children.sort(function(a, b){
         if (a.children.length > b.children.length) return -1;
         if (b.children.length > a.children.length) return 1;
