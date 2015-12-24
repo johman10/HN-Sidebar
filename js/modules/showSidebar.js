@@ -2,7 +2,7 @@ $(document).ready(function() {
   // We need to find out if the current URL is a story on HN
   // It's important these calls are HTTPS to make sure it works on every page
   // Safari stops you from calling a HTTP request on a HTTPS page, and HTTPS is better so yeah....
-  var itemUrl = window.location.href;
+  var itemUrl = window.location.host;
   var ajaxUrl = 'https://hn.algolia.com/api/v1/search?query=' + itemUrl + '&restrictSearchableAttributes=url&tags=front_page';
 
   $.ajax({

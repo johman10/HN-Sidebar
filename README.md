@@ -24,4 +24,5 @@ To install this extension you need to take a few steps. These steps are:
 ## Contributing
 This project is open and you can do with it what you want.
 If you want to contribute just follow the installation steps above.
+
 Make sure you reload the extension in Safari everytime you make a code change to see the changes.

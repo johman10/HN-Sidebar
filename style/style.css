@@ -1,9 +1,54 @@
 .hn-comments-sidebar * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;box-sizing: border-box;
+}
+
+.hn-comments-sidebar article,
+.hn-comments-sidebar aside,
+.hn-comments-sidebar details,
+.hn-comments-sidebar figcaption,
+.hn-comments-sidebar figure,
+.hn-comments-sidebar footer,
+.hn-comments-sidebar header,
+.hn-comments-sidebar hgroup,
+.hn-comments-sidebar menu,
+.hn-comments-sidebar nav,
+.hn-comments-sidebar section {
+  display: block
+}
+
+.hn-comments-sidebar ol,
+.hn-comments-sidebar ul {
+  list-style: none
+}
+
+.hn-comments-sidebar blockquote,
+.hn-comments-sidebar q {
+  quotes: none
+}
+
+.hn-comments-sidebar blockquote:before,
+.hn-comments-sidebar blockquote:after,
+.hn-comments-sidebar q:before,
+.hn-comments-sidebar q:after {
+  content: '';
+  content: none
+}
+
+.hn-comments-sidebar table {
+  border-collapse: collapse;
+  border-spacing: 0
 }
 
 .hn-comments-sidebar {
-  box-sizing: border-box;
   position: fixed;
   right: 0;
   top: 0;
