@@ -1,4 +1,4 @@
-.hn-comments-sidebar * {
+div.hn-comments-sidebar * {
   margin: 0;
   padding: 0;
   border: 0;
@@ -8,92 +8,114 @@
   line-height: 1;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.hn-comments-sidebar article,
-.hn-comments-sidebar aside,
-.hn-comments-sidebar details,
-.hn-comments-sidebar figcaption,
-.hn-comments-sidebar figure,
-.hn-comments-sidebar footer,
-.hn-comments-sidebar header,
-.hn-comments-sidebar hgroup,
-.hn-comments-sidebar menu,
-.hn-comments-sidebar nav,
-.hn-comments-sidebar section {
+div.hn-comments-sidebar article,
+div.hn-comments-sidebar aside,
+div.hn-comments-sidebar details,
+div.hn-comments-sidebar figcaption,
+div.hn-comments-sidebar figure,
+div.hn-comments-sidebar footer,
+div.hn-comments-sidebar header,
+div.hn-comments-sidebar hgroup,
+div.hn-comments-sidebar menu,
+div.hn-comments-sidebar nav,
+div.hn-comments-sidebar section {
   display: block
 }
 
-.hn-comments-sidebar ol,
-.hn-comments-sidebar ul {
+div.hn-comments-sidebar ol,
+div.hn-comments-sidebar ul {
   list-style: none
 }
 
-.hn-comments-sidebar blockquote,
-.hn-comments-sidebar q {
+div.hn-comments-sidebar blockquote,
+div.hn-comments-sidebar q {
   quotes: none
 }
 
-.hn-comments-sidebar blockquote:before,
-.hn-comments-sidebar blockquote:after,
-.hn-comments-sidebar q:before,
-.hn-comments-sidebar q:after {
+div.hn-comments-sidebar blockquote:before,
+div.hn-comments-sidebar blockquote:after,
+div.hn-comments-sidebar q:before,
+div.hn-comments-sidebar q:after {
   content: '';
   content: none
 }
 
-.hn-comments-sidebar table {
+div.hn-comments-sidebar table {
   border-collapse: collapse;
   border-spacing: 0
 }
 
-.hn-comments-sidebar {
-  font-family: sans-serif;
-  position: fixed;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 30%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-transition: width .3s, padding .3s, margin .3s;
-  transition: width .3s, padding .3s, margin .3s;
-  z-index: 99999999999;
+div.hn-comments-sidebar {
+  font-family: sans-serif !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 30% !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  -webkit-transition: width .3s, padding .3s, margin .3s !important;
+  transition: width .3s, padding .3s, margin .3s !important;
+  z-index: 99999999999 !important;
 }
 
-.hn-comments-sidebar.sidebar-hidden {
-  width: 30px;
-  padding: 0;
-  margin: 0;
-  pointer-events: none;
+div.hn-comments-sidebar.sidebar-hidden {
+  width: 30px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
 }
 
-.hn-comments-sidebar.sidebar-hidden .hn-comments {
-  display: none;
+div.hn-comments-sidebar.sidebar-hidden .hn-comments {
+  padding-right: 0px !important;
 }
 
-.hn-comments-sidebar .hn-toggle {
-  right: 0;
-  top: 30px;
-  height: 30px;
-  width: 30px;
-  background-color: #f60;
-  float: left;
-  pointer-events: auto;
-  font-size: 25px;
-  line-height: 30px;
-  color: #FFF;
-  text-align: center;
-  cursor: pointer;
+div.hn-comments-sidebar .hn-toggle {
+  right: 0 !important;
+  top: 30px !important;
+  height: 30px !important;
+  width: 30px !important;
+  background-color: #f60 !important;
+  float: left !important;
+  pointer-events: auto !important;
+  font-size: 25px !important;
+  line-height: 30px !important;
+  color: #FFF !important;
+  text-align: center !important;
+  cursor: pointer !important;
 }
 
-.hn-comments-sidebar .hn-comments {
-  width: calc(100% - 30px);
-  float: right;
-  background-color: white;
+div.hn-comments-sidebar .hn-comments {
+  width: calc(100% - 30px) !important;
+  float: right !important;
+  background-color: #FFF !important;
+  padding-right: 15px !important;
 }
 
-.hn-comments-sidebar .hn-comment {
-  margin: 15px;
+div.hn-comments-sidebar .hn-comment {
+  padding: 10px 0 0 15px !important;
+}
+
+div.hn-comments-sidebar .hn-comment .user {
+  float: left !important;
+  width: 90% !important;
+  font-weight: bold !important;
+  margin-bottom: 5px !important;
+}
+
+div.hn-comments-sidebar .hn-comment .points {
+  float: right !important;
+  width: 10% !important;
+  text-align: right !important;
+  font-weight: bold !important;
+  margin-bottom: 5px !important;
+}
+
+div.hn-comments-sidebar .hn-comment .hn-comment {
+  border-left: 1px solid #f60 !important;
 }

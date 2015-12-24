@@ -2,7 +2,7 @@ $(document).ready(function() {
   // We need to find out if the current URL is a story on HN
   // It's important these calls are HTTPS to make sure it works on every page
   // Safari stops you from calling a HTTP request on a HTTPS page, and HTTPS is better so yeah....
-  var itemUrl = window.location.host;
+  var itemUrl = window.location.origin + window.location.pathname;
   var ajaxUrl = 'https://hn.algolia.com/api/v1/search?query=' + itemUrl + '&restrictSearchableAttributes=url&tags=front_page';
 
   $.ajax({
@@ -16,12 +16,9 @@ $(document).ready(function() {
   });
 });
 
+// Toggle the sidebar on click on .hn-toggle
 $('html').on('click', '.hn-comments-sidebar .hn-toggle', function(event) {
-  $('.hn-comments-sidebar').animate({
-    'width': 'toggle'
-  }, 300, function() {
-    $('.hn-comments-sidebar').toggleClass('sidebar-hidden');
-  });
+  $('.hn-comments-sidebar').toggleClass('sidebar-hidden');
 });
 
 function getComments(objectID) {
@@ -33,6 +30,12 @@ function getComments(objectID) {
   })
   .done(function(data) {
     // If there are any comments trigger the sidebar initializer
+    // console.log(data);
+    data.children.sort(function(a, b){
+        if (a.children.length > b.children.length) return -1;
+        if (b.children.length > a.children.length) return 1;
+        return 0;
+    });
     if (data.children.length > 0) {
       initSidebar(data);
     }
@@ -55,27 +58,29 @@ function listChildren(children, depth) {
   // The API returns an hash with a key children
   // Let's check if there are children and that children is an array
   // JS seems to be doing somethings strange here with listing all the keys when calling children
-  if (children.length > 0 && Array.isArray(val.children)) {
+  if (children.length > 0 && Array.isArray(children)) {
     $.each(children, function(index, val) {
       // API return null if no points, let's fix that to make sure we have a nice show
       if (val.points === null) {
         val.points = '0';
       }
 
-      // HTML of each comment
-      comments += '<div class="hn-comment depth-' + depth + '">' +
-                    '<div class="user">' +
-                      val.author +
-                    '</div>' +
-                    '<div class="points">' +
-                      val.points +
-                    '</div>' +
-                    '<div class="text">' +
-                      val.text +
-                    '</div>' +
-                    // Since we have dept in the comments we need to run this function again with a new depth
-                    listChildren(val.children, depth + 1) +
-                  '</div>';
+      if (val.author && val.points && val.text) {
+        // HTML of each comment
+        comments += '<div class="hn-comment depth-' + depth + '">' +
+                      '<div class="user">' +
+                        val.author +
+                      '</div>' +
+                      '<div class="points">' +
+                        val.points +
+                      '</div>' +
+                      '<div class="text">' +
+                        val.text +
+                      '</div>' +
+                      // Since we have dept in the comments we need to run this function again with a new depth
+                      listChildren(val.children, depth + 1) +
+                    '</div>';
+      }
     });
   }
 
