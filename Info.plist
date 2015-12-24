@@ -22,13 +22,13 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>jquery.min.js</string>
-				<string>showSidebar.js</string>
+				<string>js/libs/jquery.min.js</string>
+				<string>js/modules/showSidebar.js</string>
 			</array>
 		</dict>
 		<key>Stylesheets</key>
 		<array>
-			<string>style.css</string>
+			<string>style/style.css</string>
 		</array>
 	</dict>
 	<key>Description</key>

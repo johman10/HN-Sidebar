@@ -17,7 +17,11 @@ $(document).ready(function() {
 });
 
 $('html').on('click', '.hn-comments-sidebar .hn-toggle', function(event) {
-  $('.hn-comments-sidebar').toggleClass('sidebar-hidden');
+  $('.hn-comments-sidebar').animate({
+    'width': 'toggle'
+  }, 300, function() {
+    $('.hn-comments-sidebar').toggleClass('sidebar-hidden');
+  });
 });
 
 function getComments(objectID) {
@@ -38,7 +42,7 @@ function getComments(objectID) {
 function initSidebar(data) {
   // Append sidebar to the current page html tag
   $('html').append('<div class="hn-comments-sidebar sidebar-hidden">' +
-    '<div class="hn-toggle"></div>' +
+    '<div class="hn-toggle">Y</div>' +
     '<div class="hn-comments">' +
       listChildren(data.children, 0) +
     '</div>' +

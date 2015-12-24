@@ -49,6 +49,7 @@
 }
 
 .hn-comments-sidebar {
+  font-family: sans-serif;
   position: fixed;
   right: 0;
   top: 0;
@@ -74,16 +75,25 @@
 
 .hn-comments-sidebar .hn-toggle {
   right: 0;
+  top: 30px;
   height: 30px;
   width: 30px;
-  background-color: black;
+  background-color: #f60;
   float: left;
   pointer-events: auto;
+  font-size: 25px;
+  line-height: 30px;
+  color: #FFF;
+  text-align: center;
+  cursor: pointer;
 }
 
 .hn-comments-sidebar .hn-comments {
   width: calc(100% - 30px);
   float: right;
-  padding: 15px;
   background-color: white;
+}
+
+.hn-comments-sidebar .hn-comment {
+  margin: 15px;
 }
